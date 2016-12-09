@@ -23,6 +23,27 @@
   
 ## 小程序中用法示例：  
 js部分：  
+    `var wxTimer = require('../../plugins/wxTimer.js');`  
+    `Page({ ` 
+      data: {  
+      },  
+      onLoad: function () {  
+        wxTimer.wxTimer.call(this,"00:10:01",function(){  
+            console.log("完成");  
+        },5,function(){  
+          var that = this;  
+          wx.getLocation({  
+            type: 'gcj02', //返回可以用于wx.openLocation的经纬度  
+            success: function(res) {  
+              that.setData({  
+                latitude : res.latitude,  
+                longitude : res.longitude,  
+              })  
+            }  
+          })  
+        }.bind(this));  
+      }  
+    })  `
 
 wxml部分：  
 
