@@ -23,6 +23,6 @@
 js部分：  
   
 wxml部分：  
- <text>{{wxTimer}}</text>  
+    <text>{{wxTimer}}</text>  
 
 
