@@ -2,10 +2,10 @@
 介绍：用于在微信小程序中进行倒计时的组件。
 ## 用法  
 引入：  
-    var timer = require('../../plugins/wxTimer.js');  
+    `var timer = require('../../plugins/wxTimer.js');  `
 
 最简单的调用方式：  
-    timer.wxTimer.call(this);  
+    `timer.wxTimer.call(this);  `
 
 其他参数：  
 
