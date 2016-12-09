@@ -21,31 +21,5 @@
 
 注意：使用此组件，会在page的data中创建一个名为wxTimer的key，如果需要在wxml中引用倒计时的数据直接{{wxTimer}}即可  
   
-## 小程序中用法示例：  
-js部分：  
-    `var wxTimer = require('../../plugins/wxTimer.js');`  
-    `Page({ ` 
-      data: {  
-      },  
-      onLoad: function () {  
-        wxTimer.wxTimer.call(this,"00:10:01",function(){  
-            console.log("完成");  
-        },5,function(){  
-          var that = this;  
-          wx.getLocation({  
-            type: 'gcj02', //返回可以用于wx.openLocation的经纬度  
-            success: function(res) {  
-              that.setData({  
-                latitude : res.latitude,  
-                longitude : res.longitude,  
-              })  
-            }  
-          })  
-        }.bind(this));  
-      }  
-    })  `
-
-wxml部分：  
-
-
-
+## 小程序中用法示例：  
+请参考[我的个人博客](http://www.cnblogs.com/baqiphp/p/6151258.html)
