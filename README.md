@@ -1,10 +1,12 @@
 # wxTimer
 介绍：用于在微信小程序中进行倒计时的组件。
 ## 用法  
-引入：
->var timer = require('../../plugins/wxTimer.js');  
+引入：  
+    var timer = require('../../plugins/wxTimer.js');  
+
 最简单的调用方式：  
->timer.wxTimer.call(this);  
+    timer.wxTimer.call(this);  
+
 其他参数：  
 
 1、beginTime    需要倒计时的时间，比如："01:11:12"，默认值为"00:00:00"
@@ -21,8 +23,8 @@
   
 ## 小程序中用法示例：  
 js部分：  
-  
+
 wxml部分：  
-    <text>{{wxTimer}}</text>  
+
 
 
