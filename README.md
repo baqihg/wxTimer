@@ -6,9 +6,9 @@
 
 最简单的调用方式：  
 ```
-    var wxTimer = new timer({
-　　  beginTime:"00:00:10"
-    }) 
+var wxTimer = new timer({
+　beginTime:"00:00:10"
+}) 
 ```
   
   
