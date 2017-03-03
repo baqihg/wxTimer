@@ -8,11 +8,13 @@
 ```
 var wxTimer = new timer({
 　beginTime:"00:00:10"
-}) 
+})
+wxTimer.start(this);
+wxTimer.stop();
 ```
   
   
-注意：此方法会在page中生成一个名为wxTimer和wxTimerSecond的data，分别是倒计时的 时/分/秒 版本和倒计时的纯秒数版本，如果需要在wxml中引用倒计时的数据直接{{wxTimer}}或者{{wxTimerSecond}}即可  
+注意：由于内部需要调用到小程序的setData方法，所以我们需要把this传过去，此方法会在page中生成一个名为wxTimer和wxTimerSecond的data，分别是倒计时的 时/分/秒 版本和倒计时的纯秒数版本，如果需要在wxml中引用倒计时的数据直接{{wxTimer}}或者{{wxTimerSecond}}即可  
 
 其他参数：  
 
