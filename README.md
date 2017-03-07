@@ -18,6 +18,7 @@ var wxTimer = new timer({
 })
 wxTimer.start(this);
 wxTimer.stop();
+
 ```  
 
 倒计时结束后执行事件  
