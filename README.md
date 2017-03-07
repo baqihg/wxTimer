@@ -18,21 +18,20 @@ var wxTimer = new timer({
 })
 wxTimer.start(this);
 wxTimer.stop();
+``` 
 
-```  
-
-倒计时结束后执行事件  
+倒计时结束后执行事件 
 
 ```
 var wxTimer = new timer({
     beginTime:"00:00:10",
     complete:function(){
-        console.log("完成了")
+        console.log("完成了")
     }
 })
 wxTimer.start(this);
 wxTimer.stop();
-```  
+``` 
 
 间隔执行事件  
 
@@ -40,16 +39,17 @@ wxTimer.stop();
 var wxTimer = new timer({
     beginTime:"00:00:10",
     complete:function(){
-        console.log("完成了")
+        console.log("完成了")
     },
     interval:2,
     intervalFn:function(){
-        console.log("过去了2秒");
+        console.log("过去了2秒");
     }
 })
 ```
 
-注意：  
+注意： 
+
 1、由于内部需要调用到小程序的setData方法，所以我们需要把this传过去。  
 2、此方法会在page中生成一个名为wxTimer和wxTimerSecond的data，分别是倒计时的 时/分/秒 版本和倒计时的纯秒数版本，如果需要在wxml中引用倒计时的数据直接{{wxTimer}}或者{{wxTimerSecond}}即可  
 
