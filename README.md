@@ -68,5 +68,5 @@ wxTimer.calibration();
 
 4、intervalFn   每隔interval秒执行一次的函数。  
 
-##2017.3.22更新  
+## 2017.3.22更新  
   应对在息屏和挂起状态下倒计时无法进行的问题，加入了校准功能，可以在onShow()函数中直接调用wxTimer.calibration()来校准时间
