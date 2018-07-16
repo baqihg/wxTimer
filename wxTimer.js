@@ -1,4 +1,4 @@
-var wxTimer = function (initObj){
+const wxTimer = function (initObj){
 	initObj = initObj || {};
 	this.beginTime = initObj.beginTime || "00:00:00";	//开始时间
 	this.interval = initObj.interval || 0;				//间隔时间
@@ -24,7 +24,7 @@ wxTimer.prototype = {
 	        //把2011年1月1日日 00：00：00换成数字型，这样就可以直接1s，1s的减，就变成了倒计时，为了看的更明确，又用new date把字符串换回来了
 	        var tmpTimeStr = tmpTime.toString().substr(16,8);//去掉前面的年月日就剩时分秒了
 	        var wxTimerSecond = (tmpTime.getTime() - new Date("1970/01/01 00:00:00").getTime()) / 1000;
-			var wxTimerList = self.data.wxTimerList;
+			var wxTimerList = self.$data.wxTimerList;
 
 			//更新计时器数组
 			wxTimerList[that.name] = {
@@ -32,11 +32,9 @@ wxTimer.prototype = {
 	            wxTimerSecond:wxTimerSecond,
 			}
 
-	        self.setData({
-	            wxTimer:tmpTimeStr,
-	            wxTimerSecond:wxTimerSecond,
-				wxTimerList:wxTimerList
-	        });
+	        self.wxTimer = tmpTimeStr
+      		self.wxTimerSecond = wxTimerSecond
+      		self.wxTimerList = wxTimerList
 	        //时间间隔执行函数
 	        if( 0 == (count-1) % that.interval && that.intervalFn){
 	            that.intervalFn();
@@ -62,4 +60,4 @@ wxTimer.prototype = {
 	}
 }
 
-module.exports = wxTimer;
+export default = wxTimer
