@@ -10,7 +10,7 @@
 
 ## 在JS中调用
 ##### 引入  
-    `var timer = require('../../plugins/wxTimer.js');  `
+    import wxTimer from '../..//utils/wxSetTimer'
 
 ##### 最简单的调用方式： 
 
@@ -21,6 +21,30 @@ var wxTimer = new timer({
 wxTimer.start(this);
 wxTimer.stop();
 ``` 
+##### 和原生小程序不同
+    data() {
+        return {
+          wxTimerList: {},
+          wxTimer: '' // 倒计时
+        }
+    在data中定义了两个变量之后,新的时间是存在wxTimer中，直接vue文件中引用就行了
+    在vue文件中
+    <template lang="pug">
+      div#red-envelope-box-wrapper
+        div.header-time
+          span.time-box {{wxTimer}}
+    </template>
+    在js文件中，这里的传的是字符串“12:00:00”
+    setTime(time) {
+      let timer = new wxTimer({
+        beginTime: time,
+        complete:function(){
+          console.log("完成了")
+        },
+      })
+      timer.start(this)
+    }
+
 ##### 开启多个计时器  
 ```
 //开启第一个定时器
