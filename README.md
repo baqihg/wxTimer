@@ -10,7 +10,7 @@
 
 ## 在JS中调用
 ##### 引入  
-    `var timer = require('../../plugins/wxTimer.js');  `
+    var timer = require('../../plugins/wxTimer.js');
 
 ##### 最简单的调用方式： 
 
